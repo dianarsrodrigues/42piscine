@@ -1,19 +1,29 @@
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/25 10:37:45 by diarodri          #+#    #+#             */
+/*   Updated: 2022/07/25 10:40:33 by diarodri         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+int	ft_strcmp(char *s1, char *s2)
 {
-    int i;
-    
-    i = 0;
-    while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
-    {
-        i++;
-    } 
-    return (s1[i] - s2[i]);
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+	{
+		i++;
+	}
+	return (s1[i] - s2[i]);
 }
-int main(void)
+/*int	main(void)
 {
     char    a[] = "Z";
     char    b[] = "A";
@@ -25,4 +35,4 @@ int main(void)
     int test = strcmp(a,b);
     printf("%d\n", test);
     return (0);  
-}
+}*/

@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_non_printable.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 10:40:39 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/21 11:56:11 by diarodri         ###   ########.fr       */
+/*   Created: 2022/07/22 12:23:13 by diarodri          #+#    #+#             */
+/*   Updated: 2022/07/24 11:24:25 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <unistd.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+void	ft_putstr_non_printable(char *src)
 {
-	unsigned int	i;
+	int	a;
 
-	i = 0;
-	while (i < n)
+	a = 0;
+	while (src[a] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		dest[a] = src[a];
+		a++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (a);
 }
 /*int	main(void)
 {
-	char texto[] = "teste 42";
-	char *src = texto;
-	char dest[] = "teste 42";
-	int n = 5;
-
-	printf("%s\n", dest);
-	ft_strncpy (dest, src, n);
-	printf("%s\n", dest);
-	strncpy (dest, src, n);
-	printf("%s", dest);
-	return (0);
+	char src[] = "teste";
+	int size = 2;
+	char dest[] = "ole";
+	
+	int sizes = ft_strlcpy (dest, src, size);
+	printf("%d", sizes);
 }*/

@@ -20,7 +20,7 @@ int	ft_str_is_alpha(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z' || str[i] >= 'a' && str[i] <= 'z')
+		if ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
 		{
 			i++;
 		}
@@ -29,7 +29,7 @@ int	ft_str_is_alpha(char *str)
 	}
 	return (1);
 }
-/*char	main(void)
+/*int	main(void)
 {
 	char n[] = "hEllo";
 	char f[] = "helo!!";
