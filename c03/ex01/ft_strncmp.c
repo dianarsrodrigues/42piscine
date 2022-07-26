@@ -6,32 +6,34 @@
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 10:41:45 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/25 10:47:45 by diarodri         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:23:08 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
-	if (i < n - 1)
+	while (i < n  && s1[i] != '\0' && s2[i] != '\0')
 	{
-		while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
+		if (s1[i] != s2[i])
 		{
-			i++;
+			return (s1[i] - s2[i]);
 		}
-		return (s1[i] - s2[i]);
+		i++;
 	}
 	return (0);
 }
-/*int main(void)
+int main(void)
 {
-    char    a[] = "ABCC";
-    char    b[] = "ABCD";
-    int nbr = 4;
+    char    a[20] = "ABCC";
+    char    b[20] = "ABCD";
+    int nbr = 5;
 
     
     printf("Nome: %s\n", a);
@@ -41,4 +43,4 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
     int test = strncmp(a,b, nbr);
     printf("%d\n", test);
     return (0);  
-}*/
+}

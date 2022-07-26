@@ -6,11 +6,12 @@
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 10:37:45 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/25 10:40:33 by diarodri         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:55:47 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
 int	ft_strcmp(char *s1, char *s2)
 {

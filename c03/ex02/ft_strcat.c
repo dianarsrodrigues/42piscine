@@ -6,11 +6,12 @@
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 10:50:06 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/25 10:54:32 by diarodri         ###   ########.fr       */
+/*   Updated: 2022/07/26 10:29:29 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strcat(char *dest, char *src)
 {

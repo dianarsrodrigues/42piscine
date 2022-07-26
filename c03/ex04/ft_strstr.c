@@ -6,22 +6,22 @@
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 15:25:35 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/25 15:46:53 by diarodri         ###   ########.fr       */
+/*   Updated: 2022/07/26 12:45:55 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
-#include <string.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
-    int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	if (to_find[j] == '\0')
-        return (str);
+		return (str);
 	while (str[i] != '\0')
 	{
 		j = 0;
@@ -35,13 +35,16 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
+/*#include <string.h>
 int main (void) 
 {
-    char str[] = "Diana Rodrigues 42 Porto";
-    char to_find[] = "42 Porto";
+    char str[50] = "star strong storm";
+    char to_find[50] = "str";
     char *text;
     
     text = ft_strstr(str, to_find);
     printf("The substring is: %s\n", text);
+    text = strstr(str, to_find);
+    printf("The substring is: %s\n", text);
     return(0);
-}
+}*/

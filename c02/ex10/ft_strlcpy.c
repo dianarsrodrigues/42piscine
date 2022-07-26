@@ -6,22 +6,40 @@
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 12:23:13 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/24 11:23:32 by diarodri         ###   ########.fr       */
+/*   Updated: 2022/07/26 09:38:40 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
+int	ft_strlen(char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
+	unsigned int	i;
 	unsigned int	a;
 
-	a = 0;
-	while (src[a] != '\0')
+	a = ft_strlen(src);
+	i = 0;
+	if (size != 0)
 	{
-		dest[a] = src[a];
-		a++;
+		while (src[i] != '\0' && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
 	}
 	return (a);
 }
@@ -32,5 +50,6 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	char dest[] = "ole";
 	
 	int sizes = ft_strlcpy (dest, src, size);
-	printf("%d", sizes);
+	printf("%d\n", sizes);
+	printf("%s", dest);
 }*/
