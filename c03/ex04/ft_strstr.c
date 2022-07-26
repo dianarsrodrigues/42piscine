@@ -12,6 +12,7 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -35,8 +36,7 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (0);
 }
-/*#include <string.h>
-int main (void) 
+/*int main (void) 
 {
     char str[50] = "star strong storm";
     char to_find[50] = "str";
