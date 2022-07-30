@@ -9,7 +9,7 @@ void    ft_lastword(char *str)
     while (str[i] != '\0')
         i++;
 
-    i--; 
+    i--;
     while (str[i] == ' ' || str[i] == '\t')
         i--;
     

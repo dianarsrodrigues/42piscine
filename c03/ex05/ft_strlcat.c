@@ -47,15 +47,15 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 }
 int    main(void)
 {
-    char    dest[] = "teste";
-    char    src[] = " ah";
+    char    dest[11] = "fffff";
+    char    src[10] = "ddddd";
     int	test;
     int	fun;
     
-    test = ft_strlcat(dest, src, 7);
+    test = ft_strlcat(dest, src, -1);
     printf("%i \n", test);
     printf("%s \n", dest);
-    fun = strlcat(dest, src, 7);
+    fun = strlcat(dest, src, -1);
     printf("%i\n", fun);
     printf("%s \n", dest);
     return (0);

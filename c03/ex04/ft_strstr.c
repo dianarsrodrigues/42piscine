@@ -39,7 +39,7 @@ char	*ft_strstr(char *str, char *to_find)
 /*int main (void) 
 {
     char str[50] = "star strong storm";
-    char to_find[50] = "str";
+    char to_find[50] = "star";
     char *text;
     
     text = ft_strstr(str, to_find);

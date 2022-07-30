@@ -43,7 +43,7 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	}
 	return (a);
 }
-/*int	main(void)
+int	main(void)
 {
 	char src[] = "teste";
 	int size = 2;
@@ -52,4 +52,4 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	int sizes = ft_strlcpy (dest, src, size);
 	printf("%d\n", sizes);
 	printf("%s", dest);
-}*/
+}

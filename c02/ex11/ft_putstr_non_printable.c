@@ -25,7 +25,7 @@ void	ft_putstr_non_printable(char *src)
 	}
 	return (a);
 }
-/*int	main(void)
+int	main(void)
 {
 	char src[] = "teste";
 	int size = 2;
@@ -33,4 +33,4 @@ void	ft_putstr_non_printable(char *src)
 	
 	int sizes = ft_strlcpy (dest, src, size);
 	printf("%d", sizes);
-}*/
+}

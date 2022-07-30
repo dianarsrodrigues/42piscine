@@ -19,7 +19,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	unsigned int	i;
 
 	i = 0;
-	while (i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
 		if (s1[i] != s2[i])
 		{
@@ -29,11 +29,11 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	}
 	return (0);
 }
-int main(void)
+/*int main(void)
 {
-    char    a[20] = "AAB";
-    char    b[20] = "ABC";
-    int nbr = 2;
+    char    a[20] = "";
+    char    b[20] = "";
+    int nbr = 3;
 
     
     printf("Nome: %s\n", a);
@@ -43,4 +43,4 @@ int main(void)
     int test = strncmp(a,b, nbr);
     printf("%d\n", test);
     return (0);  
-}
+}*/
