@@ -14,18 +14,14 @@
 
 int	ft_fibonacci(int index)
 {
-	int	t1;
-	int	t2;
-	int	nextTerm;
-	
-	t1 = 0;
-	t2 = 1;
-	nextTerm = t1 + t2;
-	while (i <= index)
-	{
-	i++; 
+	if (index < 0)
+		return (-1);
+	if (index < 2)
+		return (index);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 int main(void)
 {
-
+	printf("%i",ft_fibonacci(4));
+	return (0);
 }
