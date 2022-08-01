@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 14:38:34 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/31 14:38:37 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/01 17:06:27 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/01 17:06:30 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_sort_params(int argc, char **argv)
+int	*ft_range(int min, int max)
 {
-	int	n;
+	int	*num;
+	int range;
 	int	i;
-
-	if (argc > 1)
-	{	
-		n = 1;
-		i = 0;
-		while (n < argc)
-		{
-			i = 0;
-			while (argv[n][i] != '\0')
-			{
-				write(1, &argv[n][i], 1);
-				write (1, "\n", 1);
-				i++;
-			}
-			n++;
-		}
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc > 1)
+	
+	range = max - min;
+	num = malloc(range *sizeof(int));
+	i = 0;
+	num[0] = min;
+	while (*num < max)
 	{
-		ft_sort_params(argc, argv);
+		num[i] = min;
+		min++;
+		i++; 
 	}
+	return (num);
+}
+int	main(void)
+{
+	int *num = ft_range(2, 10);
+	printf("%ls", num);
 	return (0);
+	
 }

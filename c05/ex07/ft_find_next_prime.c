@@ -1,45 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 14:38:34 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/31 14:38:37 by diarodri         ###   ########.fr       */
+/*   Created: 2022/07/31 10:59:08 by diarodri          #+#    #+#             */
+/*   Updated: 2022/07/31 10:59:11 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_sort_params(int argc, char **argv)
+int	ft_is_prime(int nb)
 {
-	int	n;
 	int	i;
 
-	if (argc > 1)
-	{	
-		n = 1;
-		i = 0;
-		while (n < argc)
+	i = 2;
+	if (nb < 2)
+		return (0);
+	while (i <= nb / i)
+	{
+		if (nb % i == 0)
 		{
-			i = 0;
-			while (argv[n][i] != '\0')
-			{
-				write(1, &argv[n][i], 1);
-				write (1, "\n", 1);
-				i++;
-			}
-			n++;
+			return (0);
 		}
+		i++;
 	}
+	return (1);
 }
 
-int	main(int argc, char **argv)
+int	ft_find_next_prime(int nb)
 {
-	if (argc > 1)
+	if (nb < 2)
+		return (2);
+	while (nb >= 2)
 	{
-		ft_sort_params(argc, argv);
+		if (ft_is_prime(nb) == 1)
+			return (nb);
+		nb++;
 	}
 	return (0);
 }
+/*int main (void)
+{
+	printf("%d", ft_find_next_prime(4));
+	return (0);
+}*/

@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 14:38:34 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/31 14:38:37 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/01 15:49:01 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/01 15:49:04 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	ft_sort_params(int argc, char **argv)
+char	*ft_strdup(char *src)
 {
-	int	n;
-	int	i;
+	char	*tmp;
+	int		i;
 
-	if (argc > 1)
-	{	
-		n = 1;
-		i = 0;
-		while (n < argc)
-		{
-			i = 0;
-			while (argv[n][i] != '\0')
-			{
-				write(1, &argv[n][i], 1);
-				write (1, "\n", 1);
-				i++;
-			}
-			n++;
-		}
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc > 1)
+	i = 0;
+	tmp = (char *) malloc(sizeof(char));
+	while (src[i] != '\0')
 	{
-		ft_sort_params(argc, argv);
+		tmp[i] = src[i];
+		i++;
 	}
-	return (0);
+	tmp[i] = '\0';
+	return (tmp);
 }
+/*int	main(void)
+{
+	char src[10] = "Diana R";
+	
+	char *tmp = ft_strdup(src);
+	printf("%s", tmp);
+	return (0);
+}*/

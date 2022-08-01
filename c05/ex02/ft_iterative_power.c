@@ -28,7 +28,7 @@ int	ft_iterative_power(int nb, int power)
 	}
 	return (res);
 }
-int main (void)
+/*int main (void)
 {
 	printf("%i\n",ft_iterative_power(-3, -1));
 	printf("%i\n",ft_iterative_power(-3, 0));
@@ -41,4 +41,4 @@ int main (void)
 	printf("%i\n",ft_iterative_power(4, -1));
 	printf("%i\n",ft_iterative_power(4, 3));
 	return (0);
-}
+}*/

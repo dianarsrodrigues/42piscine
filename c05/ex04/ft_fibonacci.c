@@ -20,8 +20,8 @@ int	ft_fibonacci(int index)
 		return (index);
 	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
-int main(void)
+/*int main(void)
 {
 	printf("%i",ft_fibonacci(4));
 	return (0);
-}
+}*/

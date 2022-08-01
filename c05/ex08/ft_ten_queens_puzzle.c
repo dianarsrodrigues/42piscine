@@ -1,45 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_params.c                                   :+:      :+:    :+:   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/31 14:38:34 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/31 14:38:37 by diarodri         ###   ########.fr       */
+/*   Created: 2022/07/31 12:08:35 by diarodri          #+#    #+#             */
+/*   Updated: 2022/07/31 12:08:57 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_sort_params(int argc, char **argv)
+int	ft_is_prime(int nb)
 {
-	int	n;
 	int	i;
 
-	if (argc > 1)
-	{	
-		n = 1;
-		i = 0;
-		while (n < argc)
-		{
-			i = 0;
-			while (argv[n][i] != '\0')
-			{
-				write(1, &argv[n][i], 1);
-				write (1, "\n", 1);
-				i++;
-			}
-			n++;
-		}
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc > 1)
+	i = 2;
+	if (nb < 2)
+		return (0);
+	while (i <= nb / i)
 	{
-		ft_sort_params(argc, argv);
+		if (nb % i == 0)
+		{
+			return (0);
+		}
+		i++;
 	}
-	return (0);
+	return (1);
 }
