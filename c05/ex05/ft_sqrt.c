@@ -4,18 +4,28 @@ int     ft_sqrt(int nb)
 {
     int i;
 
-    i = 0;
-    if (nb <= 0)
-        return (0);
-    while (i * i < nb)
+    i = 1;
+    if (nb > 0)
     {
-        i = i + 1;
-        root = (nb / root + root) / 2;
+        while (i * i <= nb)
+        {
+            if (i * i == nb)
+                return (i);
+            i++;
+        }
     }
-    return (root);
+    return (0);
 }
 int main (void)
 {
-    printf("%d", ft_sqrt(5));
+    printf("%d\n", ft_sqrt(-10));
+    printf("%d\n", ft_sqrt(-1));
+    printf("%d\n", ft_sqrt(0));
+    printf("%d\n", ft_sqrt(1));
+    printf("%d\n", ft_sqrt(2));
+    printf("%d\n", ft_sqrt(3));
+    printf("%d\n", ft_sqrt(4));
+    printf("%d\n", ft_sqrt(9));
+    printf("%d\n", ft_sqrt(2147395600));
     return (0);
 }

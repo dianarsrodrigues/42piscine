@@ -14,18 +14,30 @@
 
 int	ft_recursive_power(int nb, int power)
 {
-	int	res;
-
-	res = 1;
-	if (power != 0)
+	if (nb > nb * nb)
+		return (0);
+	else if (power > 1)
 	{
-		res = nb * ft_recursive_power(nb, power - 1);
+		return (nb * ft_recursive_power(nb, power - 1));
 	}
-	return (res);
+	else if (power == 0)
+		return (1);
+	else if (power < 0)
+		return (0);
+	else
+		return (nb);
 }
-/*int main (void)
+int main (void)
 {
-	int res = ft_recursive_power(3, 4);
-	printf("%i", res);
+	printf("%i\n",ft_recursive_power(-3, -1));
+	printf("%i\n",ft_recursive_power(-3, 0));
+	printf("%i\n",ft_recursive_power(-3, 1));
+	printf("%i\n",ft_recursive_power(-3, 2));
+	printf("%i\n",ft_recursive_power(-3, 3));
+	printf("%i\n",ft_recursive_power(0, -1));
+	printf("%i\n",ft_recursive_power(0, 0));
+	printf("%i\n",ft_recursive_power(0, 2));
+	printf("%i\n",ft_recursive_power(4, -1));
+	printf("%i\n",ft_recursive_power(4, 3));
 	return (0);
-}*/
+}

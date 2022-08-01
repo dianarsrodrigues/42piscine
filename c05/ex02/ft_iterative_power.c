@@ -16,19 +16,29 @@ int	ft_iterative_power(int nb, int power)
 {
 	int	res;
 
-	res = 1;
-	while (power != 0)
+	res = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (power > 1)
 	{
 		res *= nb;
-		--power;
+		power--;
 	}
-	if (nb < 0)
-		return (0);
 	return (res);
 }
-/*int main (void)
+int main (void)
 {
-	int res = ft_iterative_power(3, 4);
-	printf("%i", res); 
+	printf("%i\n",ft_iterative_power(-3, -1));
+	printf("%i\n",ft_iterative_power(-3, 0));
+	printf("%i\n",ft_iterative_power(-3, 1));
+	printf("%i\n",ft_iterative_power(-3, 2));
+	printf("%i\n",ft_iterative_power(-3, 3));
+	printf("%i\n",ft_iterative_power(0, -1));
+	printf("%i\n",ft_iterative_power(0, 0));
+	printf("%i\n",ft_iterative_power(0, 2));
+	printf("%i\n",ft_iterative_power(4, -1));
+	printf("%i\n",ft_iterative_power(4, 3));
 	return (0);
-}*/
+}
