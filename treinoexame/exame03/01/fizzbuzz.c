@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ctd.c                                              :+:      :+:    :+:   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:00:31 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/15 16:08:53 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/03 15:59:17 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/03 15:59:18 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(void)
+void	ft_number(int i)
 {
-	char a;
+	if (i >= 10)
+		ft_number(i / 10);
+	write(1, &"0123456789"[i % 10], 1);
+}
+int	main (void)
+{
+	int	i;
 	
-	a = '9';
-	while(a >= '0' )
+	i = 1;
+	while (i <= 100)
 	{
-		write (1, &a, 1);
-		a--;
+		if (i % 3 == 0 && i % 5 == 0)
+			write (1, "fizzbuzz", 8);
+		else if (i % 3 == 0)
+			write (1, "fizz", 4);
+		else if (i % 5 == 0)
+			write (1, "buzz", 4);
+		else
+			ft_number(i);
+		write(1, "\n", 1); 
+		i++;
 	}
-	write (1, "\n", 1);
 	return (0);
 }
-

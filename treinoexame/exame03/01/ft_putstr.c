@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maff.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:09:47 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/15 16:32:25 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/03 16:49:30 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/03 16:49:34 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(void)
+void	ft_putstr(char	*str)
 {
-	char	a;
-	char	b;
+	int	i;
 	
-	a = 'a';
-	b = 'B';
-	while (b <= 'Z')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		write(1, &a, 1);
-		write(1, &b, 1);
-		b += 2;
-		a += 2;
+		write (1, &str[i], 1);
+		i++;
 	}
-	write(1, "\n", 1);
-	return (0);
 }
+/*int	main(void)
+{	
+	char n[] = "teste";
+	
+	ft_putstr(n);
+	return (0);
+}*/

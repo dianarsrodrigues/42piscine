@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   troca.c                                            :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/15 16:49:01 by diarodri          #+#    #+#             */
-/*   Updated: 2022/07/15 16:56:27 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/03 14:37:00 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/03 14:37:05 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(void)
+void	ft_print_numbers(void)
 {
-	char a;
-	char b;
-	char t;
-	
-	a = 2;
-	b = 6;
-	t = a;
-	a = b;
-	b = t;
-	write (1, &a, 1);
-	write (1, &b, 1);
-	return (0);	
+	int	i;
+
+	i = '0';
+	while (i <= '9')
+	{
+		write (1, &i, 1);
+		i++;
+	}
 }
+/*int	main(void)
+{
+	ft_print_numbers();
+	return (0);
+}*/
