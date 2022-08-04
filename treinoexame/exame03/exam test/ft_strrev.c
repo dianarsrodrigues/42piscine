@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 15:58:57 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 15:58:58 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+char	*ft_strrev(char *str)
 {
 	int	i;
-	int	a;
+	int	j;
+	char	tem;
 	
 	i = 0;
-	a = 0;
-	if (argc == 2)
+	j = 0;
+	while (str[i] != '\0')
 	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
-			i++;
-		}
+		i++;
 	}
-	write(1, "\n", 1);
+	while (j < i)
+	{
+		tem = str[j];
+		str[j] = str[i - 1];
+		str[i - 1] = tem;
+		j++;
+		i--;
+	}
+	return (str);
+}
+int main (void)
+{
+	char n[] = "abcdefgh";
+	
+	printf("%s\n", ft_strrev(n));
 	return (0);
 }

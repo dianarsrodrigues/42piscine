@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 11:15:18 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 11:15:20 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
-	int	i;
 	int	a;
+	int	b;
+	int	op;
+	int	res;
 	
-	i = 0;
-	a = 0;
-	if (argc == 2)
+	res = 0;
+	if (argc == 4)
 	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
-			i++;
-		}
+		a = atoi(argv[1]);
+		b = atoi(argv[3]);
+		op = argv[2][0];
+		if (op == '+')
+			res = a + b;
+		else if (op == '-')
+			res = a - b;
+		else if (op == '*')
+			res = a * b;
+		else if (op == '/')
+			res = a / b;
+		else if (op == '%')
+			res = a % b;
+		printf("%d\n", res);
 	}
-	write(1, "\n", 1);
+	else
+		write (1, "\n", 1);
 	return (0);
 }

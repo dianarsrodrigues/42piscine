@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   aff_last_param.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 15:32:55 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 15:32:56 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <limits.h>
 
 int	main(int argc, char **argv)
 {
 	int	i;
-	int	a;
+	int	n;
 	
 	i = 0;
-	a = 0;
-	if (argc == 2)
+	n = (argc - 1);
+	if (argc > 1)
 	{
-		while (argv[1][i] != '\0')
+		while (argv[n][i] != '\0')
 		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
+			write (1, &argv[n][i], 1);
 			i++;
 		}
 	}
-	write(1, "\n", 1);
+	write (1, "\n", 1);
 	return (0);
 }

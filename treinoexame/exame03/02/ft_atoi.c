@@ -1,41 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 11:37:55 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 11:38:01 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+int	ft_atoi(const char *str)
 {
 	int	i;
-	int	a;
+	int	s;
+	int	res;
 	
 	i = 0;
-	a = 0;
-	if (argc == 2)
+	s = 1;
+	res = 0;
+	while (str[i] != '\0')
 	{
-		while (argv[1][i] != '\0')
+		while (str[i] <= 32)
+			i++;	
+		if (str[i] == '-')
 		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
+			s = -1; 
 			i++;
 		}
+		else  if (str[i] == '+')
+			i++;
+		while (str[i] >= '0' &&  str[i] <= '9')
+		{
+			res = (res * 10) + str[i] - 48;
+			i++;
+		}
+		return (s * res); 
 	}
-	write(1, "\n", 1);
+}
+int	main (void)
+{
+	char n[] = "   -45";
+	char m[] = "   -45";
+	
+	printf("%i\n", ft_atoi(n));
+	printf("%i\n", atoi(m));
 	return (0);
 }

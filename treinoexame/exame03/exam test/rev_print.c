@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 15:13:03 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 15:13:05 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+char	*ft_rev_print(char *str)
 {
 	int	i;
-	int	a;
 	
 	i = 0;
-	a = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	while (i >= 0)
+	{
+		write (1, &str[i], 1);
+		i--;
+	}
+}
+/*int main (int argc, char **argv)
+{
 	if (argc == 2)
 	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
-			i++;
-		}
+		ft_rev_print(argv[1]);
 	}
-	write(1, "\n", 1);
+	write (1, "\n", 1);
 	return (0);
-}
+}*/

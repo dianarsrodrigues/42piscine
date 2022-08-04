@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 15:40:55 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 15:40:57 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int	main(int argc, char **argv)
+char	*ft_strcpy(char *s1, char *s2)
 {
 	int	i;
-	int	a;
 	
 	i = 0;
-	a = 0;
-	if (argc == 2)
+	while (s2[i] != '\0')
 	{
-		while (argv[1][i] != '\0')
-		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
-			i++;
-		}
+		s1[i] = s2[i];
+		i++;
 	}
-	write(1, "\n", 1);
-	return (0);
+	s1[i] = '\0';
+	return (s1);
 }
+/*int	main(void)
+{
+	char n[] = "teste";
+	char m[] = "ola";
+	
+	printf("%s\n", m);
+	printf("%s\n", ft_strcpy(m, n));
+	return (0);
+}*/

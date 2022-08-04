@@ -1,41 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: diarodri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/03 19:48:51 by diarodri          #+#    #+#             */
-/*   Updated: 2022/08/03 19:49:01 by diarodri         ###   ########.fr       */
+/*   Created: 2022/08/04 14:31:45 by diarodri          #+#    #+#             */
+/*   Updated: 2022/08/04 14:32:31 by diarodri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	main(int argc, char **argv)
+void	number(int n)
+{
+	if (n > 9)
+		number(n / 10);
+	write (1, &"0123456789"[n % 10], 1);
+}
+
+int	main(void)
 {
 	int	i;
-	int	a;
 	
-	i = 0;
-	a = 0;
-	if (argc == 2)
+	i = 1;
+	while (i <= 100)
 	{
-		while (argv[1][i] != '\0')
+		if (i % 3 == 0 && i % 5 == 0)
+			write (1, "fizzbuzz\n", 9);
+		else if (i % 3 == 0)
+			write (1, "fizz\n", 5);
+		else if (i % 5 == 0)
+			write (1, "buzz\n", 5);
+		else 
 		{
-			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
-				a = argv[1][i] - 64;
-			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
-				a = argv[1][i] - 96;
-			while(a)
-			{
-				write (1, &argv[1][i], 1);
-				a--;
-			}
-			a = 1;
-			i++;
+			number(i);
+			write (1, "\n", 1);
 		}
+		i++;
 	}
-	write(1, "\n", 1);
 	return (0);
 }
