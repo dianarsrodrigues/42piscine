@@ -2,6 +2,25 @@
 
 The 42 Piscine is an intensive one-month program that exposes participants to the school's teaching methods, including peer-to-peer learning, group work, peer evaluation, and project-based learning. Participants dive headfirst into the work methods of 42 students for 26 days, engaging in intensive learning and dedicating a month to mastering programming skills.
 
+###
+
+<h5 align="left">Main skills acquired</h5>
+Teamwork · Logic programming · Shell script · Peer support
+
+###
+
+# I code with
+
+###
+
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" height="40" alt="c logo"  />
+</div>
+
+###
+
+<hr>
+
 ## [Shell00](https://github.com/dianarsrodrigues/42piscine/tree/master/shell00) - Introduction to Shell
 
 ## [Shell01](https://github.com/dianarsrodrigues/42piscine/tree/master/shell01) - Introduction to Shell01
